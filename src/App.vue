@@ -23,7 +23,7 @@
 
 <script>
 import _ from 'underscore'
-var MyWorker = require("worker-loader!./worker.js");
+import MyWorker from 'worker-loader!./worker.js'
 import Copyright from './Copyright.vue'
 import FileInput from './FileInput.vue'
 import TextInput from './TextInput.vue'
@@ -69,7 +69,7 @@ export default {
       var enc = new TextEncoder("utf-8");
       var arrBuf = enc.encode(JSON.stringify(this.data)).buffer;
 
-      this.worker.postMessage({aTopic: 'load', aBuf: arrBuf}, [arrBuf]);
+      this.worker.postMessage({ aTopic: 'load', aBuf: arrBuf }, [arrBuf]);
 
       this.worker.onmessage = function (msg) {
         if (!msg.data.aTopic) {

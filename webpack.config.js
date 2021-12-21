@@ -47,7 +47,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: 'eval-source-map'
 }
 
 module.exports.plugins = [
@@ -56,7 +56,6 @@ module.exports.plugins = [
 
 if (process.env.NODE_ENV === 'development') {
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
@@ -77,7 +76,8 @@ if (process.env.NODE_ENV === 'production') {
     minimize: true
   }
 
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = 'source-map'
+
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CleanWebpackPlugin(),

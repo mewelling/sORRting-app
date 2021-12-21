@@ -1,7 +1,7 @@
-self.importScripts('https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js');
+importScripts('https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js');
 var Schedule = require('./schedule');
 
-self.onmessage = function (msg) {
+onmessage = function (msg) {
   switch (msg.data.aTopic) {
     case 'load':
       var dec = new TextDecoder();

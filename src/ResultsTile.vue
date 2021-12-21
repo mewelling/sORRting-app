@@ -11,7 +11,7 @@
 
 <script>
 import _ from 'underscore'
-var MyWorker = require("worker-loader!./worker.js");
+import MyWorker from 'worker-loader!./worker.js'
 export default {
   name: 'results-tile',
   props: [ 'result', 'input', 'data', 'index' ],
